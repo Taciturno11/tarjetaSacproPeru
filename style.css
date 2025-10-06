@@ -1,0 +1,403 @@
+/* ----------------------------------- */
+/* PALETA DE COLORES Y VARIABLES - (Actualizada a SACPRO) */
+/* ----------------------------------- */
+:root {
+    --color-primary: #02305C; /* AZUL MARINO/OSCURO (Color principal de SACPRO) */
+    --color-secondary: #FFC72C; /* AMARILLO DORADO (Color de acento de SACPRO) */
+    --color-background: #f0f4f7; /* Fondo muy claro, con un ligero toque azul/gris */
+    --color-text: #1a1a1a; /* Texto casi negro para mejor contraste */
+    --color-light-gray: #e8e8e8; /* Gris claro para botones secundarios */
+}
+
+/* ----------------------------------- */
+/* 1. Estilos del Cuerpo (Base) */
+/* ----------------------------------- */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* ----------------------------------- */
+/* 8. Estilos de las Barras de Navegación */
+/* ----------------------------------- */
+
+/* BARRA SUPERIOR (Nombre y Botones de Utilidad) */
+.navbar-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--color-background);
+    z-index: 1000;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-brand {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.nav-utility i {
+    font-size: 1.2em;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* BARRA DE ÍCONOS DE NAVEGACIÓN (BIO, RESUME, etc.) */
+.navbar-icons {
+    position: fixed;
+    top: 55px; 
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px 0;
+    z-index: 999; 
+    border-bottom: 1px solid #eee;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.7em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-item i {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.nav-item.active {
+    color: var(--color-primary); /* AZUL ACTIVO */
+    border-bottom: 2px solid var(--color-primary); /* LÍNEA AZUL */
+}
+
+.nav-item:hover {
+    color: var(--color-primary); /* AZUL EN HOVER */
+}
+
+
+/* ----------------------------------- */
+/* 2. Estilos de la Tarjeta (Card) */
+/* ----------------------------------- */
+.card {
+    width: 95%;
+    max-width: 450px;
+    background-color: #ffffff; 
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    padding: 0;
+    text-align: center; 
+    overflow: hidden;
+    margin: 130px auto 30px auto; /* Espacio para las barras fijas */
+}
+
+/* ----------------------------------- */
+/* 3. Sección de Cabecera (Fondo) */
+/* ----------------------------------- */
+.card-header {
+    height: 200px;
+    background-image: url('portadaempresa.png'); 
+    background-size: cover;
+    background-position: center; /* Cambiado a 'center' para mejor visualización */
+    position: relative;
+}
+
+/* ----------------------------------- */
+/* 4. Foto de Perfil y Contenedor */
+/* ----------------------------------- */
+.profile-img-container {
+    position: relative;
+    z-index: 10;
+    margin-top: -75px; 
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------- */
+/* 5. Estilos de Texto (Nombre y Título) */
+/* ----------------------------------- */
+h1 {
+    font-size: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* ----------------------------------- */
+/* 6. Estilos de Redes Sociales */
+/* ----------------------------------- */
+.social-links {
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    color: var(--color-text);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary); /* AZUL EN HOVER */
+}
+
+/* ----------------------------------- */
+/* 7. Estilos de Botones de Acción */
+/* ----------------------------------- */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-top: 1px solid #eeeeee;
+    background-color: var(--color-background); /* Fondo de la sección de botones */
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* BOTÓN PRINCIPAL: AZUL MARINO */
+.primary-btn {
+    background-color: var(--color-primary); 
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #004a7a; /* AZUL más oscuro al pasar el mouse */
+}
+
+/* BOTÓN SECUNDARIO: AMARILLO DORADO (usando el color de acento de SACPRO) */
+.secondary-btn {
+    background-color: var(--color-secondary); 
+    color: var(--color-text); /* Texto oscuro para contraste */
+}
+
+.secondary-btn:hover {
+    background-color: #ffb500; /* AMARILLO más oscuro al pasar el mouse */
+}
+
+/* ----------------------------------- */
+/* NUEVOS ESTILOS PARA EL CONTENIDO LARGO */
+/* ----------------------------------- */
+
+/* Contenedor de Contenido */
+.card-content {
+    padding: 10px 25px 25px 25px; 
+    text-align: left;
+}
+
+.card-content h3 {
+    color: var(--color-primary); /* Títulos de contenido en Azul SACPRO */
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-background);
+    padding-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.card-content ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+    font-size: 0.95em;
+    color: var(--color-text);
+}
+
+.card-content ul li::before {
+    content: "\2022"; /* Punto de lista simple */
+    color: var(--color-secondary); /* Usa el Amarillo de SACPRO para los puntos */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Separador entre secciones */
+.content-separator {
+    height: 10px;
+    background-color: var(--color-background);
+    margin: 0 0;
+    border-top: 1px solid #eee;
+}
+
+/* Estilo para las insignias ISO */
+.quality-icons {
+    text-align: center;
+    margin: 15px 0 10px 0;
+}
+
+.iso-badge {
+    display: inline-block;
+    background-color: var(--color-secondary); /* Fondo Amarillo */
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 0.8em;
+}
+
+/* ----------------------------------- */
+/* 11. ESTILOS DE GALERÍAS Y BOTONES DE CONTACTO */
+/* ----------------------------------- */
+
+/* --- Galerías de Imágenes (Productos y Calidad) --- */
+/* --- Galerías de Imágenes (Productos y Calidad) --- */
+.product-gallery, .certificate-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap; 
+}
+
+.product-gallery img {
+    /* Las imágenes de producto se mantienen pequeñas */
+    width: 45%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* REGLA MODIFICADA: Imágenes de Calidad (Grandes y Completas) */
+.certificate-gallery img {
+    /* Hace la imagen más ancha y más grande en general */
+    width: 180%; 
+    max-width: 350px; 
+    
+    /* Asegura que el certificado se vea entero (sin recorte) */
+    object-fit: contain; 
+    
+    /* Estilo visual */
+    padding: 10px; 
+    background-color: #ffffff;
+   ; /* Añade un borde sutil para que parezca un documento */
+}
+
+/* --- Botones Sociales de Contacto --- */
+.contact-social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para que sea compacto */
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: white; /* Texto blanco por defecto */
+    transition: opacity 0.3s;
+        /* ... otras propiedades ... */
+        font-size: 1em; /* Ligeramente más grande el texto del botón */
+        padding: 14px 10px; /* Hacemos el padding un poco más grande para que se vea mejor */
+        /* ... otras propiedades ... */
+}
+
+.social-btn i {
+    font-size: 1.4em;
+    margin-right: 10px;
+    
+}
+
+/* Colores de Marca para los Botones */
+.social-btn.email {
+    background-color: #D44638; /* Rojo de Google/Email */
+}
+.social-btn.web {
+    background-color: #555555; /* Gris oscuro para Web/Globo */
+}
+.social-btn.facebook {
+    background-color: #1877F2; /* Azul de Facebook */
+}
+.social-btn.instagram {
+    /* Fondo degradado o un color sólido */
+    background: #E1306C; /* Rosa-rojo de Instagram */
+}
+.social-btn.youtube {
+    background-color: #FF0000; /* Rojo de YouTube */
+}
+.social-btn.tiktok {
+    background-color: #000000; /* Negro de TikTok */
+}
+
+.social-btn:hover {
+    opacity: 0.85;
+}
+
+/* ----------------------------------- */
+/* 12. ESTILO DE IMAGEN EN BARRA SUPERIOR */
+/* ----------------------------------- */
+.nav-profile-img {
+    width: 30px; /* Tamaño pequeño */
+    height: 30px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover;
+    margin-right: 10px; /* Espacio entre la imagen y el nombre */
+    vertical-align: middle; /* Alinea la imagen con el texto del nombre */
+    border: 1px solid var(--color-light-gray); /* Borde sutil */
+}
+
+/* Ajuste para el texto en .nav-brand */
+.nav-brand {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex; /* Asegura que la imagen y el texto se alineen bien */
+    align-items: center;
+}
