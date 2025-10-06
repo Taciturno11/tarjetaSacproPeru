@@ -1,0 +1,173 @@
+/* ----------------------------------- */
+/* ESTILOS PARA TARJETA SIMPLE SIN PORTADA */
+/* ----------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #02305C 0%, #FFC72C 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px 40px 40px;
+    text-align: center;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #02305C, #FFC72C);
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 30px auto;
+    border: 0px solid #02305C;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.name {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #02305C;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores específicos para cada red social */
+.social-links a[aria-label="Facebook"] {
+    background: #1877F2;
+}
+
+.social-links a[aria-label="YouTube"] {
+    background: #FF0000;
+}
+
+.social-links a[aria-label="TikTok"] {
+    background: #000000;
+}
+
+.social-links a[aria-label="Instagram"] {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-links a[aria-label="Página Web"] {
+    background: #555555;
+}
+
+.social-links a[aria-label="Correo Electrónico"] {
+    background: #D44638;
+}
+
+.whatsapp-btn {
+    margin-top: 30px;
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn i {
+    margin-right: 10px;
+}
+
+/* Media Queries para Responsive */
+@media (max-width: 480px) {
+    .card {
+        margin: 10px;
+        max-width: calc(100% - 20px);
+        padding: 50px 30px 30px 30px;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 25px;
+    }
+    
+    .name {
+        font-size: 1.8rem;
+    }
+    
+    .title {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
