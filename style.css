@@ -7,6 +7,21 @@
     --color-background: #f0f4f7; /* Fondo muy claro, con un ligero toque azul/gris */
     --color-text: #1a1a1a; /* Texto casi negro para mejor contraste */
     --color-light-gray: #e8e8e8; /* Gris claro para botones secundarios */
+    --color-card-bg: #ffffff; /* Fondo de la tarjeta */
+    --color-nav-bg: #ffffff; /* Fondo de navegación */
+    --color-border: #eee; /* Color de bordes */
+}
+
+/* ----------------------------------- */
+/* VARIABLES PARA MODO OSCURO */
+/* ----------------------------------- */
+[data-theme="dark"] {
+    --color-background: #1a1a1a; /* Fondo oscuro */
+    --color-text: #ffffff; /* Texto blanco */
+    --color-card-bg: #2d2d2d; /* Fondo de tarjeta oscuro */
+    --color-nav-bg: #2d2d2d; /* Fondo de navegación oscuro */
+    --color-border: #404040; /* Bordes oscuros */
+    --color-light-gray: #404040; /* Gris oscuro para elementos secundarios */
 }
 
 /* ----------------------------------- */
@@ -18,6 +33,7 @@ body {
     padding: 0;
     background-color: var(--color-background);
     color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ----------------------------------- */
@@ -34,9 +50,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: var(--color-background);
+    background-color: var(--color-nav-bg);
     z-index: 1000;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
 }
 
 .nav-brand {
@@ -48,6 +65,23 @@ body {
     font-size: 1.2em;
     margin-left: 15px;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-utility i:hover {
+    color: var(--color-primary);
+}
+
+/* Icono de modo oscuro/claro */
+.nav-utility .fa-moon,
+.nav-utility .fa-sun {
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+/* Icono del sol en modo oscuro */
+.nav-utility .fa-sun {
+    color: var(--color-secondary);
 }
 
 /* BARRA DE ÍCONOS DE NAVEGACIÓN (BIO, RESUME, etc.) */
@@ -58,10 +92,11 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: #ffffff;
+    background-color: var(--color-nav-bg);
     padding: 10px 0;
     z-index: 999; 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-item {
@@ -96,13 +131,14 @@ body {
 .card {
     width: 95%;
     max-width: 450px;
-    background-color: #ffffff; 
+    background-color: var(--color-card-bg); 
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
     padding: 0;
     text-align: center; 
     overflow: hidden;
     margin: 130px auto 30px auto; /* Espacio para las barras fijas */
+    transition: background-color 0.3s ease;
 }
 
 /* ----------------------------------- */
@@ -130,8 +166,9 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #ffffff;
+    border: 5px solid var(--color-card-bg);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
 }
 
 /* ----------------------------------- */
@@ -150,6 +187,11 @@ h2 {
     margin-top: 0;
     margin-bottom: 25px;
     font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] h2 {
+    color: #cccccc;
 }
 
 /* ----------------------------------- */
@@ -163,11 +205,47 @@ h2 {
     color: var(--color-text);
     font-size: 1.5em;
     margin: 0 10px;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
+/* Colores específicos para cada red social */
+.social-links a[aria-label="Facebook"] {
+    color: #1877F2; /* Azul de Facebook */
+}
+
+.social-links a[aria-label="YouTube"] {
+    color: #FF0000; /* Rojo de YouTube */
+}
+
+.social-links a[aria-label="TikTok"] {
+    color: #000000; /* Negro de TikTok */
+}
+
+.social-links a[aria-label="Instagram"] {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-links a[aria-label="Página Web"] {
+    color: #555555; /* Gris oscuro para web */
+}
+
+.social-links a[aria-label="Correo Electrónico"] {
+    color: #D44638; /* Rojo de Gmail */
+}
+
+/* Hover effects */
 .social-links a:hover {
-    color: var(--color-primary); /* AZUL EN HOVER */
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Ajuste para modo oscuro - mantener colores vibrantes */
+[data-theme="dark"] .social-links a[aria-label="TikTok"] {
+    color: #ffffff; /* Blanco para TikTok en modo oscuro */
 }
 
 /* ----------------------------------- */
@@ -177,8 +255,9 @@ h2 {
     display: flex;
     justify-content: space-around;
     padding: 20px 0;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid var(--color-border);
     background-color: var(--color-background); /* Fondo de la sección de botones */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .btn {
@@ -246,9 +325,10 @@ h2 {
 
 .card-content ul li {
     padding: 5px 0;
-    border-bottom: 1px dotted #eee;
+    border-bottom: 1px dotted var(--color-border);
     font-size: 0.95em;
     color: var(--color-text);
+    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .card-content ul li::before {
@@ -265,7 +345,8 @@ h2 {
     height: 10px;
     background-color: var(--color-background);
     margin: 0 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Estilo para las insignias ISO */
@@ -320,8 +401,10 @@ h2 {
     
     /* Estilo visual */
     padding: 10px; 
-    background-color: #ffffff;
-   ; /* Añade un borde sutil para que parezca un documento */
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* --- Botones Sociales de Contacto --- */
@@ -391,7 +474,8 @@ h2 {
     object-fit: cover;
     margin-right: 10px; /* Espacio entre la imagen y el nombre */
     vertical-align: middle; /* Alinea la imagen con el texto del nombre */
-    border: 1px solid var(--color-light-gray); /* Borde sutil */
+    border: 1px solid var(--color-border); /* Borde sutil */
+    transition: border-color 0.3s ease;
 }
 
 /* Ajuste para el texto en .nav-brand */
